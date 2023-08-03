@@ -1,0 +1,30 @@
+CREATE TABLE task_type 
+(
+  id INT NOT NULL,
+  type VARCHAR(20) NOT NULL,
+  comment VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE task 
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  type_id INT NOT NULL,
+  title VARCHAR(50) NOT NULL,
+  detail TEXT,
+  deadline DATETIME NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE "user"
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  password VARCHAR(60) NOT NULL,
+  enabled TINYINT NOT NULL,
+  authority VARCHAR(50) NOT NULL,
+  tempkey VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY(id)
+);
